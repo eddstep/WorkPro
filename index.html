@@ -7,6 +7,35 @@
     <script src="js/include.js"></script>
 </head>
 <body>
+    <div id="menuBox"></div>
 
+    <script>
+        var obj = {
+            google: 'http://google.ru',
+            ya: 'http://ya.ru',
+            mail: 'http://mail.ru',
+            goog: 'http://google.ru',
+            yaru: 'http://ya.ru',
+            mailru: 'http://mail.ru',
+            googl: 'http://google.ru',
+            yar: 'http://ya.ru',
+            mailr: 'http://mail.ru',
+            gogle: 'http://google.ru',
+            yao: 'http://ya.ru',
+            mal: 'http://mail.ru',
+            gog: 'http://google.ru',
+            yru: 'http://ya.ru',
+            milru: 'http://mail.ru',
+            gogl: 'http://google.ru',
+            yr: 'http://ya.ru',
+            milr: 'http://mail.ru'
+        };
+
+        new Menu({
+            menuContainerElem: document.getElementById('menuBox'),
+            typeOfMenu: 'horMenu',
+            menuListObj: obj
+        });
+    </script>
 </body>
 </html>

@@ -1,3 +1,14 @@
 /**
  * Created by Эдгар on 09.07.2015.
  */
+#menuBox ul:nth-child(1){
+    list-style-type: none;
+}
+
+.horMenu li{
+    display: inline-block;
+}
+
+.verMenu{
+    display: block;
+}
