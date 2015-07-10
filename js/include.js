@@ -1,9 +1,6 @@
 /**
  * Created by Эдгар on 09.07.2015.
  */
-/**
- * Created by Эдгар on 26.06.2015.
- */
 
 function Menu(options){
     var cont = options.menuContainerElem;
@@ -12,6 +9,7 @@ function Menu(options){
 
     (function(){
         var menu = document.createElement('div');
+
         menu.appendChild(createMenuList(menuItems));
         menu.className = menuForm;
 
@@ -20,10 +18,13 @@ function Menu(options){
 
     function createMenuList(obj){
         var ul = document.createElement('ul');
+        var html = '';
 
         for(var item in obj){
-            ul.innerHTML += '<li><a href="' + obj.item + '">' + item + '</a>';
+            html += '<li><a href="' + obj.item + '">' + item + '</a></li>';
         }
+
+        ul.innerHTML = html;
 
         return ul;
     }

@@ -31,9 +31,6 @@
 
 ## Plugin-specific files:
 
-## jshintrc
-.jshintrc
-
 # IntelliJ
 /out/
 
@@ -47,3 +44,15 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+
+#-------------------------
+##More ignore files
+
+# jshintrc
+.jshintrc
+
+#bower pack manager
+/bower_components/
+bower.json
+test.html
+test.js
