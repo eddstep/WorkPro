@@ -3,12 +3,14 @@
  */
 #menuBox ul:nth-child(1){
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .horMenu li{
     display: inline-block;
 }
 
-.verMenu{
+.verMenu li{
     display: block;
 }
