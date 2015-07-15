@@ -3,18 +3,19 @@
  */
 
 function Menu(options){
+
     var cont = options.menuContainerElem;
     var menuItems = options.menuListObj;
     var menuForm = options.typeOfMenu;
 
-    return function(){
+    var menuBuilder = function(items, form){
         var menu = document.createElement('div');
 
-        menu.appendChild(createMenuList(menuItems));
-        menu.className = menuForm;
+        menu.appendChild(createMenuList(items));
+        menu.className = form;
 
-        cont.appendChild(menu);
-    };
+        return menu;
+    }(menuItems, menuForm);
 
     function createMenuList(obj){
         var ul = document.createElement('ul');
@@ -28,11 +29,30 @@ function Menu(options){
 
         return ul;
     }
+
+    this.cont = cont;
+    this.menuBuilder = menuBuilder;
+
+    this.appendToDoc(cont, menuBuilder);// final appending menu in doc after all fiches
 }
 
+Menu.prototype.appendToDoc = function(container, menu){
+    container.appendChild(menu);
+};
+
 function SliderMenu(options){
-    Menu.apply(this.arguments);
+
+    Menu.apply(this, arguments);
+
+    this.allowed = true;
+    this.appendToDoc(this.cont, this.menuBuilder);
 }
 
 SliderMenu.prototype = Object.create(Menu.prototype);
 SliderMenu.prototype.constructor = SliderMenu;
+
+SliderMenu.prototype.appendToDoc = function(){
+    if(this.allowed){
+        Menu.prototype.appendToDoc.apply(this, arguments);
+    }
+};
